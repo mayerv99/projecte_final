@@ -1,4 +1,5 @@
 import React, { useState, createContext } from "react";
+import EnterprisesForm from "../components/Forms/EnterprisesForm";
 
 export const EnterpriseContext = createContext();
 
@@ -9,6 +10,10 @@ export default function EnterpriseProvider({ children }) {
   const [selectedEnterprise, setSelectedEnterprise] = useState({});
 
   const [selectedUser, setSelectedUser] = useState({});
+
+  const openEnterpriseForm = () => {
+    return <EnterprisesForm />;
+  };
 
   return (
     <EnterpriseContext.Provider
