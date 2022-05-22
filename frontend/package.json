@@ -1,0 +1,27 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron": "electron ."
+  },
+  "dependencies": {
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
+    "axios": "^0.27.2",
+    "react": "17",
+    "react-dom": "17",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "electron": "^18.2.4",
+    "vite": "^2.9.9"
+  }
+}
