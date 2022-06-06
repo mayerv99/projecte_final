@@ -1,7 +1,13 @@
 import React, { useRef } from "react";
 
 //Styled
-import { Header, Wrapper, FormContainer, InputWrapper } from "./styled";
+import {
+  Header,
+  Wrapper,
+  FormContainer,
+  InputWrapper,
+  FormFooter,
+} from "./styled";
 
 //Unform
 import { Form } from "@unform/web";
@@ -10,14 +16,28 @@ import { Form } from "@unform/web";
 import Input from "../components/Input";
 
 //Services
-import { createNewEnterprise } from "../../../services/enterprise";
+import {
+  getAllEnterprises,
+  createNewEnterprise,
+} from "../../../services/enterprise";
+
+//Context
+import useEnterprise from "../../../Hooks/useEnterprise";
 
 function EnterprisesForm({ handleCloseEnterprisesModal }) {
   const formRef = useRef(null);
 
+  const { setEnterprisesList } = useEnterprise();
+
   const handleSubmit = async (data) => {
-    const res = await createNewEnterprise(data);
+    await createNewEnterprise(data);
     handleCloseEnterprisesModal();
+    fetchEnterprises();
+  };
+
+  const fetchEnterprises = async () => {
+    const allEnterprises = await getAllEnterprises();
+    setEnterprisesList(allEnterprises.data);
   };
 
   return (
@@ -82,7 +102,9 @@ function EnterprisesForm({ handleCloseEnterprisesModal }) {
               width="20%"
             />
           </InputWrapper>
-          <button type="submit">Carlos</button>
+          <FormFooter>
+            <button type="submit">Salvar</button>
+          </FormFooter>
         </Form>
       </FormContainer>
     </Wrapper>

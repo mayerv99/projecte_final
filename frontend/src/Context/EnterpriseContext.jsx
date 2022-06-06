@@ -9,11 +9,8 @@ export default function EnterpriseProvider({ children }) {
   const [enterprisesList, setEnterprisesList] = useState([]);
   const [selectedEnterprise, setSelectedEnterprise] = useState({});
 
+  const [usersList, setUsersList] = useState([]);
   const [selectedUser, setSelectedUser] = useState({});
-
-  const openEnterpriseForm = () => {
-    return <EnterprisesForm />;
-  };
 
   return (
     <EnterpriseContext.Provider
@@ -26,6 +23,8 @@ export default function EnterpriseProvider({ children }) {
         setSelectedEnterprise,
         selectedUser,
         setSelectedUser,
+        usersList,
+        setUsersList,
       }}
     >
       {children}

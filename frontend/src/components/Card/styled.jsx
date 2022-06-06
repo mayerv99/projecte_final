@@ -14,6 +14,7 @@ export const Header = styled.div`
   text-transform: uppercase;
   letter-spacing: 0.75px;
   font-weight: bold;
+  margin-bottom: 20px;
 
   button {
     padding: 2px 10px;

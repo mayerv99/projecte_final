@@ -12,6 +12,8 @@ export default function useEnterprise() {
     setSelectedEnterprise,
     selectedUser,
     setSelectedUser,
+    usersList,
+    setUsersList,
   } = useContext(EnterpriseContext);
 
   return {
@@ -23,5 +25,7 @@ export default function useEnterprise() {
     setSelectedEnterprise,
     selectedUser,
     setSelectedUser,
+    usersList,
+    setUsersList,
   };
 }

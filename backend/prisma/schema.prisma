@@ -12,43 +12,113 @@ datasource db {
 
 model Enterprise {
   id Int @id @default(autoincrement())
-  enterpriseCode String
-  enterpriseName String
-  ownerName String
-  ownerIdentification String
-  registerDate String 
+  enterpriseCode String? @unique
+  enterpriseName String?
+  ownerName String?
+  ownerIdentification String?
+  registerDate String? 
   lastFieldUpdate DateTime @updatedAt
-  localAddress String
-  complement String
-  referencePoint String
-  irrigableArea Decimal
+  localAddress String?
+  complement String?
+  referencePoint String?
+  irrigableArea Decimal?
   registerCurrentStep Int?
   lastRegisterStepUpdate DateTime?
 
   users User[]
+  interferences Interference[]
 
   @@map("enterprises")
 }
 
 model User {
   id Int @id @default(autoincrement())
-  userIdentification String
-  userName String
-  phonePrefix String
-  phoneNumber String
-  email String
-  localAddress String
-  complement String
-  addressNumber String
-  district String
-  city String
-  uf String
-  cep String
-  postalCode String
-  plantInOtherEnterprises Boolean
+  userIdentification String?
+  userName String?
+  phonePrefix String?
+  phoneNumber String?
+  email String?
+  localAddress String?
+  complement String?
+  addressNumber String?
+  district String?
+  city String?
+  uf String?
+  cep String?
+  postalCode String?
+  plantInOtherEnterprises String?
 
   enterprise Enterprise @relation(fields: [enterpriseId], references: [id])
   enterpriseId Int
 
+  interferences Interference[]
+
   @@map("users")
+}
+
+model Interference {
+  id Int @id @default(autoincrement())
+  
+  user User @relation(fields: [userId], references: [id])
+  userId Int
+
+  enterprise Enterprise @relation(fields: [enterpriseCode], references: [enterpriseCode])
+  enterpriseCode String
+
+  interferenceCode String?
+  consumerUnity String?
+  reglaId String?
+  cnarhId String?
+  pointDenomination String?
+  type String?
+  subType String?
+  waterBodyName String?
+  waterBodyType String?
+  latitude String?
+  longitude String?
+  uf String?
+  city String?
+  domain String?
+  source String?
+  regularSituation String?
+  interferenceSituation String?
+  authorizationType String?
+  actType String?
+  actNumber String?
+  authorizationInitialDate DateTime?
+  authorizationEndDate DateTime?
+  mainUtility String? 
+  secondaryUtility String?
+  thirdUtility String?
+  irrigationSystemFinality String?
+  irrigationAreaSystemFynality Decimal?
+  irrigableCultureMoreFrequently String?
+
+  irrigationSystemFinality2 String?
+  irrigationAreaSystemFynality2 Decimal?
+  irrigableCultureMoreFrequently2 String?
+
+  irrigationSystemFinality3 String?
+  irrigationAreaSystemFynality3 Decimal?
+  irrigableCultureMoreFrequently3 String?
+
+  aquacultureTanks Int?
+  aquacultureTanksDepth Decimal?
+  aquacultureTanksTotalArea Decimal?
+  
+  aquacultureCultivation String?
+
+  speciesCreation String?
+  systemCreation String?
+  animalsNumber Int?
+
+  speciesCreation2 String?
+  systemCreation2 String?
+  animalsNumber2 Int?
+
+  peopleNumber Int?
+
+  observation String?
+
+  @@map("interferences")
 }
