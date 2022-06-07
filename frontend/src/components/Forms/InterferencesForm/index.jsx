@@ -243,8 +243,8 @@ function InterferencesForm({ handleCloseInterferencesModal }) {
             />
             <Input
               name="irrigationAreaSystemFynality"
-              label="Finalidade da área irrigada 1: *"
-              placeholder="Insira a finalidade"
+              label="Área irrigada 1: *"
+              placeholder="Ex.: 10.5"
               width="33%"
             />
             <Input
@@ -263,8 +263,8 @@ function InterferencesForm({ handleCloseInterferencesModal }) {
             />
             <Input
               name="irrigationAreaSystemFynality2"
-              label="Finalidade da área irrigada 2: *"
-              placeholder="Insira a finalidade"
+              label="Área irrigada 2: *"
+              placeholder="Ex.: 10.5"
               width="33%"
             />
             <Input
@@ -283,8 +283,8 @@ function InterferencesForm({ handleCloseInterferencesModal }) {
             />
             <Input
               name="irrigationAreaSystemFynality3"
-              label="Finalidade da área irrigada 3: *"
-              placeholder="Insira a finalidade"
+              label="Área irrigada 3: *"
+              placeholder="Ex.: 10.5"
               width="33%"
             />
             <Input

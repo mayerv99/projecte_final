@@ -98,7 +98,7 @@ function EnterprisesForm({ handleCloseEnterprisesModal }) {
             <Input
               name="irrigableArea"
               label="Área irrigável (hectares): *"
-              placeholder="Ex.: 10,2"
+              placeholder="Ex.: 10.2"
               width="20%"
             />
           </InputWrapper>
