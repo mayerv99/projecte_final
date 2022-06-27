@@ -43,7 +43,6 @@ app.get("/users", async (req, res) => {
 app.get("/interferences", async (req, res) => {
   if (req.query && req.query.userId) {
     const userId = (req.query as any).userId;
-    console.log("userId: ", userId);
     const interferences = await prismaClient.interference.findMany({
       where: { userId: parseInt(userId) },
     });
@@ -53,7 +52,7 @@ app.get("/interferences", async (req, res) => {
 
 app.post("/interferences", async (req, res) => {
   await prismaClient.interference.create({
-    data: req.body,
+    data: req.body.data,
   });
 });
 

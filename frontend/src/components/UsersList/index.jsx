@@ -22,7 +22,6 @@ function UsersList({ handleOpenInterferencesModal }) {
 
   useEffect(() => {
     if (selectedEnterprise && selectedEnterprise.id) {
-      console.log("SelectedEnterprise: ", selectedEnterprise);
       getUsers();
     }
   }, [selectedEnterprise]);

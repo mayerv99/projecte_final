@@ -33,6 +33,8 @@ function InterferencesForm({ handleCloseInterferencesModal }) {
       animalsNumber,
       animalsNumber2,
       peopleNumber,
+      authorizationInitialDate,
+      authorizationEndDate,
     } = data;
 
     return {
@@ -43,8 +45,8 @@ function InterferencesForm({ handleCloseInterferencesModal }) {
       animalsNumber2: parseInt(animalsNumber2),
       peopleNumber: parseInt(peopleNumber),
       authorizationInitialDate: new Date(authorizationInitialDate),
-      authorizationDate: new Date(authorizationDate),
-      userId: selectedUser.userId,
+      authorizationEndDate: new Date(authorizationEndDate),
+      userId: selectedUser.id,
       enterpriseId: selectedEnterprise.id,
     };
   };
@@ -196,6 +198,7 @@ function InterferencesForm({ handleCloseInterferencesModal }) {
               label="Número do ato: *"
               placeholder="Insira o número"
               width="33%"
+              type="number"
             />
           </InputWrapper>
           <InputWrapper>

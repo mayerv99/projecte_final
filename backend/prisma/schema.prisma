@@ -62,8 +62,8 @@ model Interference {
   user User @relation(fields: [userId], references: [id])
   userId Int
 
-  enterprise Enterprise @relation(fields: [enterpriseCode], references: [enterpriseCode])
-  enterpriseCode String
+  enterprise Enterprise @relation(fields: [enterpriseId], references: [id])
+  enterpriseId Int
 
   interferenceCode String?
   consumerUnity String?

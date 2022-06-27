@@ -15,7 +15,7 @@ function ListItem({ user, handleOpenInterferencesModal }) {
   const { selectedUser, setSelectedUser } = useEnterprise();
 
   useEffect(() => {
-    if (selectedUser) {
+    if (selectedUser && selectedUser.id) {
       getUserInterferences(selectedUser.id);
     }
   }, [selectedUser]);
@@ -42,9 +42,9 @@ function ListItem({ user, handleOpenInterferencesModal }) {
       </Summary>
       <Wrapper>
         {interferences &&
-          interferences.map((interference) => (
+          interferences.map((interference, index) => (
             <div style={{ display: "flex" }}>
-              {interference.id} - {interference.actType}
+              {index + 1} - {interference.actType}
             </div>
           ))}
       </Wrapper>
